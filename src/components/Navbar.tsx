@@ -1,7 +1,8 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "../hooks/use-theme";
 
 const links = [
   { to: "/", label: "Home" },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -73,20 +75,42 @@ export default function Navbar() {
             })}
           </ul>
 
-          <Link
-            to="/contact"
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full gradient-bg text-primary-foreground font-semibold text-sm glow-hover"
-          >
-            Hire Me
-          </Link>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggle}
+              className="p-2 rounded-full glass hover:scale-110 transition-transform"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Light mode" : "Dark mode"}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={theme}
+                  initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                  transition={{ duration: 0.25 }}
+                  className="block"
+                >
+                  {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                </motion.span>
+              </AnimatePresence>
+            </button>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="lg:hidden p-2 rounded-lg glass"
-            aria-label="Menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+            <Link
+              to="/contact"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full gradient-bg text-primary-foreground font-semibold text-sm glow-hover"
+            >
+              Hire Me
+            </Link>
+
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="lg:hidden p-2 rounded-lg glass"
+              aria-label="Menu"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </nav>
       </div>
 

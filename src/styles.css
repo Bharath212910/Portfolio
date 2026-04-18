@@ -39,6 +39,56 @@
 :root {
   --radius: 0.875rem;
 
+  /* Light theme */
+  --background: oklch(0.98 0.01 250);
+  --foreground: oklch(0.18 0.03 270);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.03 270);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 270);
+
+  /* Primary: deep cyan */
+  --primary: oklch(0.55 0.16 220);
+  --primary-foreground: oklch(0.98 0.01 250);
+
+  /* Secondary: violet */
+  --secondary: oklch(0.55 0.22 295);
+  --secondary-foreground: oklch(0.98 0.005 250);
+
+  --muted: oklch(0.94 0.01 260);
+  --muted-foreground: oklch(0.45 0.02 260);
+
+  --accent: oklch(0.6 0.2 320);
+  --accent-foreground: oklch(0.98 0.005 250);
+
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.98 0.005 250);
+
+  --border: oklch(0.55 0.04 270 / 20%);
+  --input: oklch(0.55 0.04 270 / 25%);
+  --ring: oklch(0.55 0.16 220);
+
+  --glow: oklch(0.55 0.16 220);
+  --glow-2: oklch(0.55 0.22 305);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.16 220), oklch(0.55 0.22 305));
+  --gradient-mesh: radial-gradient(ellipse at top left, oklch(0.7 0.22 305 / 0.2), transparent 50%),
+    radial-gradient(ellipse at bottom right, oklch(0.7 0.16 220 / 0.18), transparent 50%),
+    radial-gradient(ellipse at center, oklch(0.65 0.22 295 / 0.1), transparent 70%);
+
+  --shadow-glow: 0 0 40px oklch(0.55 0.16 220 / 0.3), 0 0 80px oklch(0.55 0.22 305 / 0.18);
+  --shadow-glass: 0 8px 32px oklch(0.5 0.05 270 / 0.15), inset 0 1px 0 oklch(1 0 0 / 0.6);
+
+  /* Glass surface tokens (theme-aware) */
+  --glass-bg: oklch(1 0 0 / 0.55);
+  --glass-bg-strong: oklch(1 0 0 / 0.7);
+  --glass-border: oklch(0.5 0.05 270 / 0.18);
+  --scrollbar-track: oklch(0.92 0.01 260);
+}
+
+.dark {
   /* Futuristic dark theme */
   --background: oklch(0.14 0.03 270);
   --foreground: oklch(0.97 0.01 250);
@@ -49,11 +99,9 @@
   --popover: oklch(0.18 0.035 270);
   --popover-foreground: oklch(0.97 0.01 250);
 
-  /* Primary: electric cyan */
   --primary: oklch(0.82 0.16 200);
   --primary-foreground: oklch(0.14 0.03 270);
 
-  /* Secondary: violet */
   --secondary: oklch(0.65 0.22 295);
   --secondary-foreground: oklch(0.98 0.005 250);
 
@@ -80,11 +128,11 @@
 
   --shadow-glow: 0 0 40px oklch(0.82 0.16 200 / 0.4), 0 0 80px oklch(0.7 0.22 305 / 0.2);
   --shadow-glass: 0 8px 32px oklch(0.05 0.02 270 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.05);
-}
 
-.dark {
-  --background: oklch(0.14 0.03 270);
-  --foreground: oklch(0.97 0.01 250);
+  --glass-bg: oklch(0.2 0.03 270 / 0.4);
+  --glass-bg-strong: oklch(0.22 0.04 270 / 0.6);
+  --glass-border: oklch(1 0 0 / 0.08);
+  --scrollbar-track: oklch(0.18 0.035 270);
 }
 
 @layer base {
@@ -115,7 +163,7 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: oklch(0.18 0.035 270);
+    background: var(--scrollbar-track);
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(var(--gradient-primary));
@@ -126,18 +174,18 @@
 
 @layer utilities {
   .glass {
-    background: oklch(0.2 0.03 270 / 0.4);
+    background: var(--glass-bg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid oklch(1 0 0 / 0.08);
+    border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-glass);
   }
 
   .glass-strong {
-    background: oklch(0.22 0.04 270 / 0.6);
+    background: var(--glass-bg-strong);
     backdrop-filter: blur(28px) saturate(180%);
     -webkit-backdrop-filter: blur(28px) saturate(180%);
-    border: 1px solid oklch(1 0 0 / 0.1);
+    border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-glass);
   }
 
