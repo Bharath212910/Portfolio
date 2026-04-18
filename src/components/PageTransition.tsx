@@ -34,16 +34,18 @@ const variants = {
 export default function PageTransition({
   children,
   variant = "slide",
+  duration = 0.6,
 }: {
   children: ReactNode;
   variant?: Variant;
+  duration?: number;
 }) {
   return (
     <motion.div
       initial={variants[variant].initial}
       animate={variants[variant].animate}
       exit={variants[variant].exit}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration, ease: [0.22, 1, 0.36, 1] }}
       className="pt-28 pb-20 min-h-screen"
     >
       {children}
