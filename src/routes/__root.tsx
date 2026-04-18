@@ -55,6 +55,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Bharath K — Java Full Stack Developer" },
+      { name: "description", content: "A modern, animated personal portfolio showcasing skills, projects, and experience with 3D visuals and interactive elements." },
+      { property: "og:description", content: "A modern, animated personal portfolio showcasing skills, projects, and experience with 3D visuals and interactive elements." },
+      { name: "twitter:description", content: "A modern, animated personal portfolio showcasing skills, projects, and experience with 3D visuals and interactive elements." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/458b31d9-c1fb-4615-9030-b7f65fc144e8/id-preview-bfa06e0c--50ce5ea0-4a65-48b9-a22a-38135250283f.lovable.app-1776518092704.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/458b31d9-c1fb-4615-9030-b7f65fc144e8/id-preview-bfa06e0c--50ce5ea0-4a65-48b9-a22a-38135250283f.lovable.app-1776518092704.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
