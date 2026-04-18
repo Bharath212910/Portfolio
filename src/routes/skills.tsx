@@ -18,7 +18,7 @@ export const Route = createFileRoute("/skills")({
 
 function Skills() {
   return (
-    <PageTransition variant="zoom">
+    <PageTransition variant="zoom" duration={1.4}>
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader eyebrow="// my toolkit" title="Skills & Technologies" subtitle="A blend of frontend craftsmanship and backend engineering." />
 
