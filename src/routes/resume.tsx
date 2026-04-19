@@ -4,6 +4,7 @@ import { Download, FileText, CheckCircle2 } from "lucide-react";
 import PageTransition from "../components/PageTransition";
 import SectionHeader from "../components/SectionHeader";
 import { profile, skills } from "../data/portfolio";
+import resumePdf from "../assets/Bharath_Resume.pdf";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -60,11 +61,8 @@ function Resume() {
               ))}
             </ul>
             <motion.a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.print();
-              }}
+              href={resumePdf}
+              download="Bharath_Resume.pdf"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 rounded-full gradient-bg px-7 py-3.5 font-bold text-primary-foreground animate-glow-pulse"

@@ -48,7 +48,7 @@ export default function Navbar() {
               BK
             </div>
             <span className="hidden sm:block font-bold text-lg tracking-tight">
-              Bharath<span className="gradient-text">.dev</span>
+              Bharath<span className="gradient-text">.K</span>
             </span>
           </Link>
 
