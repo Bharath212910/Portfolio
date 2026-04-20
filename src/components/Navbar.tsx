@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../hooks/use-theme";
-
+// test update
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
