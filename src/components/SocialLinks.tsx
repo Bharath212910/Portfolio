@@ -4,7 +4,7 @@ import { Github, Linkedin, Instagram, Youtube, Twitter, MessageCircle } from "lu
 const socials = [
   { icon: Github, href: "https://github.com/Bharath212910", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/bharath-k-267078260/", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Instagram, href: "https://instagram.com/k_bharat_h", label: "Instagram" },
   { icon: MessageCircle, href: "https://wa.me/919361893097", label: "WhatsApp" },
   { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
